@@ -7,7 +7,6 @@ class NoDBStoreGist {
     token = process.env.NODB_GIST_TOKEN,
     name = 'default'
   } = {}) {
-    super()
     this._gistId = gistId
     this._gistToken = token
     this._gistName = name
@@ -38,7 +37,8 @@ class NoDBStoreGist {
   }
 
   async load() {
-    this.nodb.loadJson(await this._getGist().catch(console.error))
+    const obj = await this._getGist().catch(console.error)
+    this.nodb.loadJson(obj.content)
   }
 
   _updateGist() {
@@ -47,7 +47,9 @@ class NoDBStoreGist {
       this._gist.edit({
         id: this._gistId,
         files: {
-          [this._gistName]: this.nodb.toJson()
+          [`${this._gistName}.nodb.json`]: {
+            content: this.nodb.toJson()
+          }
         }
       }, (e, r) => {
         if (e === null) {
@@ -84,4 +86,4 @@ class NoDBStoreGist {
 
 
 
-module.export = NoDBStoreGist
+module.exports = NoDBStoreGist
