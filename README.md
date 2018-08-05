@@ -26,6 +26,7 @@ const store = new NoDBStoreGist({gistId, token, name})
 //   the token stored in the environement will be used
 
 // add the store to the db
+const db = new NoDB()
 db.addStore(store)
 
 // you can change the time between two save with (ms)
