@@ -1,0 +1,27 @@
+{
+  "name": "nodbstore-gist",
+  "version": "0.0.1",
+  "description": "Store for nodb using gist.github as persistent mode",
+  "main": "nodbstore-gist.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Westixy/nodbstore-gist.git"
+  },
+  "keywords": [
+    "gist",
+    "github",
+    "nodbstore"
+  ],
+  "author": "Westixy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Westixy/nodbstore-gist/issues"
+  },
+  "homepage": "https://github.com/Westixy/nodbstore-gist#readme",
+  "dependencies": {
+    "gists": "^1.0.1"
+  }
+}
