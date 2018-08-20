@@ -1,6 +1,6 @@
 {
   "name": "nodbstore-gist",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Store for nodb using gist.github as persistent mode",
   "main": "nodbstore-gist.js",
   "scripts": {

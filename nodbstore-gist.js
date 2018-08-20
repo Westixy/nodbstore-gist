@@ -38,7 +38,7 @@ class NoDBStoreGist {
 
   async load() {
     const obj = await this._getGist().catch(console.error)
-    this.nodb.loadJson(obj.content)
+    if (obj !== null && obj.content !== undefined) this.nodb.loadJson(obj.content)
   }
 
   _updateGist() {
